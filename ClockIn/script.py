@@ -2,6 +2,7 @@ import time
 import datetime
 from datetime import date
 import calendar
+import random
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 
@@ -23,10 +24,19 @@ timeOfDay = x[9] + x[10]
 hour = x[0] + x[1]
 print(timeOfDay)
 Day = calendar.day_name[my_date.weekday()] # gives you a day
-if((timeOfDay == "AM" and hour == "07") and (Day != "Saturday" or Day != "Sunday")):
+if((timeOfDay == "AM" and (hour == "07" or hour == "08")) and (Day != "Saturday" or Day != "Sunday")):
     print("This should check you in the morning")
 elif(timeOfDay == "PM" and hour == "04" and (Day != "Saturday" or Day != "Sunday")):
     print("This should check you out in the afternoon")
+
+randomHour = random.randrange(7,9)
+randomMin = random.randrange(30,59)
+randomSecond = random.randrange(0,59)
+if(randomHour > 7):
+    randomMin = random.randrange(0, 15)
+print(randomHour)
+print(randomMin)
+print(randomSecond)
 # if(x[1] == "8" and )
 # if(calendar.day_name[my_date.weekday() == 'Saturday'] or calendar.day_name[my_date.weekday() == 'Sunday']):
 #     time.sleep(5) # we keep sleeping maybe?
