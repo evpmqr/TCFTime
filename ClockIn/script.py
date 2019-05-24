@@ -3,6 +3,7 @@ import datetime
 from datetime import date
 import calendar
 import random
+import tkinter as tk
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 
@@ -15,32 +16,51 @@ from selenium.webdriver.common.keys import Keys
 # driver.find_element_by_id("_FOpt1:_FOr1:0:_FOSrHWM_HCMWFMWORKAREA_FUSE_WEBCLOCK:0:_FOTsr1:1:wcUpl:UPsp1:wcRgn:0:btn3Pgl").click() #clock in
 
 
-my_date = date.today()
-print(calendar.day_name[my_date.weekday()])
-currentDT = datetime.datetime.now()
-x = (currentDT.strftime("%I:%M:%S %p"))
-print(x)
-timeOfDay = x[9] + x[10]
-hour = x[0] + x[1]
-print(timeOfDay)
-Day = calendar.day_name[my_date.weekday()] # gives you a day
-if((timeOfDay == "AM" and (hour == "07" or hour == "08")) and (Day != "Saturday" or Day != "Sunday")):
-    print("This should check you in the morning")
-elif(timeOfDay == "PM" and hour == "04" and (Day != "Saturday" or Day != "Sunday")):
-    print("This should check you out in the afternoon")
-
-randomHour = random.randrange(7,9)
-randomMin = random.randrange(30,59)
-randomSecond = random.randrange(0,59)
-if(randomHour > 7):
-    randomMin = random.randrange(0, 15)
-print(randomHour)
-print(randomMin)
-print(randomSecond)
+# my_date = date.today()
+# print(calendar.day_name[my_date.weekday()])
+# currentDT = datetime.datetime.now()
+# x = (currentDT.strftime("%I:%M:%S %p"))
+# print(x)
+# timeOfDay = x[9] + x[10]
+# hour = x[0] + x[1]
+# print(timeOfDay)
+# Day = calendar.day_name[my_date.weekday()] # gives you a day
+# if((timeOfDay == "AM" and (hour == "07" or hour == "08")) and (Day != "Saturday" or Day != "Sunday")):
+#     print("This should check you in the morning")
+# elif(timeOfDay == "PM" and hour == "04" and (Day != "Saturday" or Day != "Sunday")):
+#     print("This should check you out in the afternoon")
+#
+# randomHour = random.randrange(7,8)
+# randomMin = random.randrange(30,59)
+# randomSecond = random.randrange(0,59)
+# if(randomHour > 7):
+#     randomMin = random.randrange(0, 15)
+# print(randomHour)
+# print(randomMin)
+# print(randomSecond)
 # if(x[1] == "8" and )
 # if(calendar.day_name[my_date.weekday() == 'Saturday'] or calendar.day_name[my_date.weekday() == 'Sunday']):
 #     time.sleep(5) # we keep sleeping maybe?
 #     driver.refresh() # we refresh maybe?
 # else:
 #
+
+# m = tk.Tk()
+# m.title("Time Clcok")
+# button = tk.Button(m, text='stop', width=25, command=m.destroy)
+# button.pack()
+# m.mainloop()
+
+print("Enter time in this format HR:MN:SC AM/PM for example 08:28:09 AM")
+checkInTime = input()
+parseHour = checkInTime[0] + checkInTime[1]
+parseMin = checkInTime[3] + checkInTime[4]
+parseSec = checkInTime[6] + checkInTime[7]
+parseAMPM = checkInTime[9] + checkInTime[10]
+print(parseHour)
+print(parseMin)
+print(parseSec)
+print(parseAMPM)
+
+
 
