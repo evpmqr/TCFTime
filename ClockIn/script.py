@@ -7,9 +7,11 @@ import tkinter as tk
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 
-# driver = webdriver.Chrome(r"C:\Users\chromedriver.exe")
-# driver.get("https://edyd.fa.us2.oraclecloud.com/hcmUI/faces/FndOverview?fnd=%3B%3B%3B%3Bfalse%3B256%3B%3B%3B&fndGlobalItemNodeId=HWM_HCMWFMWORKAREA_FUSE_WEBCLOCK&_afrLoop=8337365441095987&_afrWindowMode=0&_afrWindowId=l8us4u4y3&_adf.ctrl-state=b6f3fc3ox_105&_afrFS=16&_afrMT=screen&_afrMFW=1680&_afrMFH=561&_afrMFDW=1680&_afrMFDH=1050&_afrMFC=8&_afrMFCI=0&_afrMFM=0&_afrMFR=96&_afrMFG=0&_afrMFS=0&_afrMFO=0") #opens that time page
-# time.sleep(5)
+driver = webdriver.Chrome(r"C:\Users\chromedriver.exe")
+driver.get("https://edyd.fa.us2.oraclecloud.com/hcmUI/faces/FndOverview?fnd=%3B%3B%3B%3Bfalse%3B256%3B%3B%3B&fndGlobalItemNodeId=HWM_HCMWFMWORKAREA_FUSE_WEBCLOCK&_afrLoop=8337365441095987&_afrWindowMode=0&_afrWindowId=l8us4u4y3&_adf.ctrl-state=b6f3fc3ox_105&_afrFS=16&_afrMT=screen&_afrMFW=1680&_afrMFH=561&_afrMFDW=1680&_afrMFDH=1050&_afrMFC=8&_afrMFCI=0&_afrMFM=0&_afrMFR=96&_afrMFG=0&_afrMFS=0&_afrMFO=0") #opens that time page
+i = 0
+time.sleep(60)
+print("I slept for 60 seconds")
 # driver.find_element_by_id("_FOpt1:_FOr1:0:_FOSrHWM_HCMWFMWORKAREA_FUSE_WEBCLOCK:0:_FOTsr1:1:wcUpl:UPsp1:wcRgn:0:cil21j_id_1").click()  #clock out
 # time.sleep(2)
 # driver.refresh() # Refreshes page don't know why I put this
@@ -51,16 +53,16 @@ from selenium.webdriver.common.keys import Keys
 # button.pack()
 # m.mainloop()
 
-print("Enter time in this format HR:MN:SC AM/PM for example 08:28:09 AM")
-checkInTime = input()
-parseHour = checkInTime[0] + checkInTime[1]
-parseMin = checkInTime[3] + checkInTime[4]
-parseSec = checkInTime[6] + checkInTime[7]
-parseAMPM = checkInTime[9] + checkInTime[10]
-print(parseHour)
-print(parseMin)
-print(parseSec)
-print(parseAMPM)
+# print("Enter time in this format HR:MN:SC AM/PM for example 08:28:09 AM")
+# checkInTime = input()
+# parseHour = checkInTime[0] + checkInTime[1]
+# parseMin = checkInTime[3] + checkInTime[4]
+# parseSec = checkInTime[6] + checkInTime[7]
+# parseAMPM = checkInTime[9] + checkInTime[10]
+# print(parseHour)
+# print(parseMin)
+# print(parseSec)
+# print(parseAMPM)
 
 
 
